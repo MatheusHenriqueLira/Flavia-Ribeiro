@@ -1,15 +1,51 @@
-body{
+body {
     background-color: #F9F5F0;
+    font-family: "Inria Serif", serif;
+    padding-top: 90px;
 }
 
-.navbar{
-    background-color: #344F1F;
+:root {
+    --verde: #967250;
+    --branco: #F9F5F0;
+    --bege: #EFE8CE;
 }
 
-.card-fofissimo{
-    background-color: #F2EAD3;
-    border: 2px solid #344F1F;
-    padding: 20px;
-    margin: auto;
+.minha-navbar {
+    background: linear-gradient(to right, var(--bege), #E4E0D1);
+    color: var(--verde);
+    text-align: center;
+
+}
+
+.minha-navbar .navbar-brand {
+    color: var(--verde);
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 100px;
+}
+
+.nav-itens {
+    margin-right: 100px;
+}
+
+.navbar-brand img {
+    width: 70px;
+    height: 70px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--verde);
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.procedimentos {
     margin-top: 50px;
+}
+
+.meu-carrosel {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

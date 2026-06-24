@@ -9,26 +9,30 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark minha-navbar"> <!-- navbar-expand-lg faz com que os links apareçam no
+    <nav class="navbar navbar-expand-lg navbar-dark minha-navbar fixed-top"> <!-- navbar-expand-lg faz com que os links apareçam no
         computador mas sumam no celular -->
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Flávia Ribeiro Estética</a>
+            <a class="navbar-brand" href="index.html"> <img src="/img/Flor grandinha.png" alt="Logo"> Flávia Ribeiro
+                Estética</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav"> <!-- é essa div que obedece ao botão-->
+            <div class="collapse navbar-collapse nav-itens" id="navbarNav"> <!-- é essa div que obedece ao botão-->
                 <ul class="navbar-auto ms-auto navbar-nav"> <!--ei vei, ms-auto é a classe que vai fazer com que ela empurre
                     todos os links para o canto direito da tela no computador, deixando o nome da esteticista isolado na
                     esquerda -->
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
 
                     <li class="nav-item">
@@ -40,26 +44,15 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-warning" href="#admin">Painel de Gestão</a>
+                        <a class="nav-link" href="#admin">Painel de Gestão</a>
                     </li>
 
                 </ul>
             </div>
         </div>
     </nav>
-    <h1 class="text-center mt-4 mb-4">Sobre Mim</h1> <!-- depois deixa isso chave -->
-    <div class="card card-fofissimo" style="width: 500px;">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
-                content.</p>
-            <a href="#" class="card-link">da pra meter um link aqui</a>
-            <a href="#" class="card-link">e um aqui</a>
-        </div>
-    </div>
 
-    <div id="carouselExampleCaptions" data-bs-theme="dark" class="carousel slide">
+    <div id="carouselExampleCaptions" data-bs-theme="dark" class="carousel slide meu-carrosel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -69,7 +62,6 @@
                 aria-label="Slide 3"></button>
         </div>
 
-        <h1 class="text-center mt-4 mb-4">Procedimentos</h1> <!-- depois deixa isso chave -->
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="https://imgs.search.brave.com/CjKcaHKSgDIl_0YK4ORriJkv73QFBMcAmmxiz-JPq6M/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy82/LzYwL05vLUltYWdl/LVBsYWNlaG9sZGVy/LWJhbm5lci5zdmc"
@@ -96,6 +88,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+
 </body>
 
 </html>
