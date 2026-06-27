@@ -89,7 +89,40 @@ body {
 
 .feedbacks {
     color: var(--verde);
+    margin-bottom: 80px;
 }
+
+.card-feedback {
+    background-color: var(--branco);
+    border: 1px solid var(--bege);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(150, 114, 80, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-feedback:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(150, 114, 80, 0.12);
+}
+
+.card-feedback .card-text {
+    font-size: 16px;
+    font-style: italic;
+    color: #8c6643;
+    line-height: 1.6;
+}
+
+.card-feedback .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--verde);
+}
+
+.star-rating {
+    color: #d4a373;
+    font-size: 18px;
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {
