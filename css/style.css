@@ -21,11 +21,6 @@ body {
     color: var(--verde);
     font-size: 24px;
     font-weight: bold;
-    margin-left: 100px;
-}
-
-.nav-itens {
-    margin-right: 100px;
 }
 
 .navbar-brand img {
@@ -46,6 +41,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .sobre-mim img {
     transition: transform 0.3s ease;
 }
@@ -53,25 +49,26 @@ body {
 .sobre-mim img:hover {
     transform: scale(1.02);
 }
+
 .sobre-mim {
     color: var(--verde);
     margin-bottom: 50px;
 }
+
 .sobre-mim p {
     font-size: 18px;
     line-height: 1.8;
 }
+
 .sobre-mim h1 {
     font-size: 48px;
     margin-bottom: 20px;
     font-weight: 700;
 }
+
 .meu-carrosel {
     margin-top: 50px;
     margin-bottom: 50px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .carousel-item img {
@@ -81,13 +78,27 @@ body {
 }
 
 .fundoo-carrossel {
-    background-color: var(--bege);
+    background: linear-gradient(to right, var(--bege), #E4E0D1);
     color: var(--verde);
     padding: 50px 0;
 }
+
+.fundoo-carrossel h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
 .feedbacks {
     color: var(--verde);
     margin-bottom: 80px;
+    padding: 50px 0;
+}
+
+.feedbacks h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .card-feedback {
@@ -96,7 +107,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(150, 114, 80, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
+
 }
 
 .card-feedback:hover {
@@ -105,21 +116,21 @@ body {
 }
 
 .card-feedback .card-text {
-    font-size: 16px;
+    font-size: 18px;
     font-style: italic;
     color: #8c6643;
     line-height: 1.6;
 }
 
 .card-feedback .card-title {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     color: var(--verde);
 }
 
 .star-rating {
     color: #d4a373;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 
@@ -127,29 +138,68 @@ body {
     .carousel-item img {
         height: 300px;
     }
+
     body {
-        padding-top: 100px;
+        padding-top: 90px;
     }
-    .sobre-mim h1 {
-        font-size: 36px;
+
+    .navbar-brand img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .minha-navbar .navbar-brand {
+        font-size: 18px;
+    }
+
+    .sobre-mim h1, .fundoo-carrossel h1, .feedbacks h1, .fundoo-endereco h1 {
+        font-size: 32px;
+        margin-bottom: 25px;
     }
 }
 
 @media (max-width: 576px) {
-    .sobre-mim h1 {
-        font-size: 28px;
-    }
     body {
-        padding-top: 140px;
+        padding-top: 90px;
+    }
+
+    .sobre-mim h1, .fundoo-carrossel h1, .feedbacks h1, .fundoo-endereco h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
     }
 }
 
-.botaozin{
+.botaozin {
     background-color: var(--verde);
     color: var(--branco);
     border: none;
     padding: 10px 20px;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: 15px;
     transition: transform 0.3s ease;
+}
+
+.botaozin:hover {
+    color: var(--bege);
+    background-color: var(--verde);
+    transform: scale(1.02);
+}
+
+.fundoo-endereco {
+    background: linear-gradient(to right, var(--bege), #E4E0D1);
+    color: var(--verde);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.fundoo-endereco h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+footer{
+    background: linear-gradient(to right, var(--bege), #E4E0D1);
+    color: var(--verde);
+    padding: 10px 0;
 }
