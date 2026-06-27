@@ -133,54 +133,17 @@ body {
     font-size: 20px;
 }
 
-
-@media (max-width: 768px) {
-    .carousel-item img {
-        height: 300px;
-    }
-
-    body {
-        padding-top: 90px;
-    }
-
-    .navbar-brand img {
-        width: 45px;
-        height: 45px;
-    }
-
-    .minha-navbar .navbar-brand {
-        font-size: 18px;
-    }
-
-    .sobre-mim h1, .fundoo-carrossel h1, .feedbacks h1, .fundoo-endereco h1 {
-        font-size: 32px;
-        margin-bottom: 25px;
-    }
-}
-
-@media (max-width: 576px) {
-    body {
-        padding-top: 90px;
-    }
-
-    .sobre-mim h1, .fundoo-carrossel h1, .feedbacks h1, .fundoo-endereco h1 {
-        font-size: 26px;
-        margin-bottom: 20px;
-    }
-}
-
 .botaozin {
     background-color: var(--verde);
     color: var(--branco);
-    border: none;
     padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 15px;
+    font-size: 22px;
+    border-radius: 20px;
     transition: transform 0.3s ease;
 }
 
 .botaozin:hover {
-    color: var(--bege);
+    color: var(--branco);
     background-color: var(--verde);
     transform: scale(1.02);
 }
@@ -198,8 +161,51 @@ body {
     margin-bottom: 40px;
 }
 
-footer{
+footer {
     background: linear-gradient(to right, var(--bege), #E4E0D1);
     color: var(--verde);
     padding: 10px 0;
 }
+
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 90px;
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
+
+    .navbar-brand img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .minha-navbar .navbar-brand {
+        font-size: 18px;
+    }
+
+    .sobre-mim h1,
+    .fundoo-carrossel h1,
+    .feedbacks h1,
+    .fundoo-endereco h1 {
+        font-size: 32px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding-top: 90px;
+    }
+
+    .sobre-mim h1,
+    .fundoo-carrossel h1,
+    .feedbacks h1,
+    .fundoo-endereco h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+}
+
