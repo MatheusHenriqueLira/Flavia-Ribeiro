@@ -11,7 +11,9 @@
     <script src="/js/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -52,43 +54,87 @@
         </div>
     </nav>
 
-    <div id="carouselExampleCaptions" data-bs-theme="dark" class="carousel slide meu-carrosel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+    <section class="container sobre-mim">
+
+        <div class="row align-items-center">
+
+            <div class="col-8">
+
+                <h1 class="text-center">Sobre Mim</h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+
+                <div class="d-flex">
+                    <h4 class="instagram">
+                        @flavia.ribeirodesigner
+                    </h4>
+
+                    <h4 class="telefone">
+                        (12) 99999-9999
+                    </h4>
+                </div>
+
+            </div>
+
+
+            <div class="col-4 imagem-sobre-mim">
+
+                <img src="https://imgs.search.brave.com/mk07rschpwcN1I7XEjdtR4uq5yQw5gARSeSa7IEgvNk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wbmcu/cG5ndHJlZS5jb20v/cG5nLXZlY3Rvci8y/MDI0MDgyNC9vdXJt/aWQvcG5ndHJlZS1j/b25maWRlbnQtYnVz/aW5lc3N3b21hbi13/aXRoLWNyb3NzZWQt/YXJtcy1wb3J0cmFp/dC1jbGlwYXJ0LXBu/Zy1pbWFnZV8xMzYx/MTc0NS5wbmc"
+                    alt="Flávia Ribeiro">
+
+            </div>
+
         </div>
 
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://imgs.search.brave.com/CjKcaHKSgDIl_0YK4ORriJkv73QFBMcAmmxiz-JPq6M/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy82/LzYwL05vLUltYWdl/LVBsYWNlaG9sZGVy/LWJhbm5lci5zdmc"
-                    class="d-block w-100" alt="procedimento 1">
-            </div>
-            <div class="carousel-item">
-                <img src="https://imgs.search.brave.com/CjKcaHKSgDIl_0YK4ORriJkv73QFBMcAmmxiz-JPq6M/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy82/LzYwL05vLUltYWdl/LVBsYWNlaG9sZGVy/LWJhbm5lci5zdmc"
-                    class="d-block w-100" alt="Procedimento 2">
-            </div>
-            <div class="carousel-item">
-                <img src="https://imgs.search.brave.com/CjKcaHKSgDIl_0YK4ORriJkv73QFBMcAmmxiz-JPq6M/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy82/LzYwL05vLUltYWdl/LVBsYWNlaG9sZGVy/LWJhbm5lci5zdmc"
-                    class="d-block w-100" alt="Procedimento 3">
-            </div>
-        </div>
+    </section>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+    <div class="fundoo-carrossel" id="procedimentos">
+        <h1 class="text-center">Procedimentos</h1>
+        <div id="carouselExampleCaptions" data-bs-theme="dark" class="carousel slide meu-carrosel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlHNqBS1rOLC4NHaS-4rwrmN2PLlUHpLHBqDgTDJ2Bng&s=10"
+                        class="d-block w-100" alt="procedimento 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9bd7c8OMZiutbLZ_PM-9zuesFNC7OYRznHQzdQRMQtw&s=10"
+                        class="d-block w-100" alt="procedimento 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRrCsMlpev7O6PalZ9g2dCKytNIdN-2xBGuvRO9mrSJw&s=10"
+                        class="d-block w-100" alt="procedimento 3">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
 
-</body>
+    <div class="container feedbacks" id="feedbacks">
+        <h1 class="text-center mt-5" >Feedbacks</h1>
 
 </html>
