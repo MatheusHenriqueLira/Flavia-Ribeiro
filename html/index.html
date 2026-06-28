@@ -374,6 +374,85 @@
 
     </footer>
 
+
+    <!-- MODAL DE LOGIN -->
+    <div class="modal fade modal-verde" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginTitulo"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="modalLoginTitulo">Entrar na sua conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formLogin" onsubmit="return false">
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="campoEmail" placeholder="Email" required>
+                        </div>
+                        <div class="mb-2">
+                            <input type="password" class="form-control" id="campoSenha" placeholder="Senha" required>
+                        </div>
+                        <div id="erroLogin" class="alert alert-danger d-none" role="alert">
+                            E-mail ou senha incorretos.
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-verde" onclick="fazerLogin()">Entrar</button>
+                        </div>
+                        <p class="mb-1 text-center text-muted">
+                            Não tem conta?
+                            <span class="link-verde" data-bs-toggle="modal" data-bs-target="#modalCadastro"
+                                data-bs-dismiss="modal">Cadastre-se</span>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE CADASTRO -->
+    <div class="modal fade modal-verde" id="modalCadastro" tabindex="-1" aria-labelledby="modalCadastroTitulo"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="modalCadastroTitulo">Criar sua conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formCadastro" onsubmit="return false">
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="cadastroEmail" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" id="cadastroTelefone" placeholder="Telefone"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" id="cadastroSenha" placeholder="Senha" required>
+                        </div>
+                        <div class="mb-1">
+                            <input type="password" class="form-control" id="cadastroConfirma"
+                                placeholder="Confirmar senha" required>
+                        </div>
+                        <div id="erroCadastro" class="alert alert-danger d-none" role="alert"></div>
+                        <div id="sucessoCadastro" class="alert alert-success d-none" role="alert">
+                            Conta criada com sucesso!
+                            <span class="link-verde" data-bs-toggle="modal" data-bs-target="#modalLogin"
+                                data-bs-dismiss="modal">Clique aqui para entrar</span>.
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-verde" onclick="fazerCadastro()">Criar conta</button>
+                        </div>
+                        <p class="mt-0 mb-0 text-center text-muted">
+                            Já tem conta?
+                            <span class="link-verde" data-bs-toggle="modal" data-bs-target="#modalLogin"
+                                data-bs-dismiss="modal">Faça Login</span>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
