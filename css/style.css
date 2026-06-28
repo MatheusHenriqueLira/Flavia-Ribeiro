@@ -14,7 +14,6 @@ body {
     background: linear-gradient(to right, var(--bege), #E4E0D1);
     color: var(--verde);
     text-align: center;
-
 }
 
 .minha-navbar .navbar-brand {
@@ -36,14 +35,9 @@ body {
     margin-right: 10px;
 }
 
-.imagem-sobre-mim {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .sobre-mim img {
     transition: transform 0.3s ease;
+    border-radius: 10%;
 }
 
 .sobre-mim img:hover {
@@ -138,8 +132,6 @@ body {
     font-weight: 700;
 }
 
-
-
 .card-feedback {
     background-color: var(--branco);
     border: 1px solid var(--verde);
@@ -206,7 +198,6 @@ footer {
     padding: 10px 0;
 }
 
-
 @media (max-width: 768px) {
     body {
         padding-top: 90px;
@@ -247,4 +238,3 @@ footer {
         margin-bottom: 20px;
     }
 }
-
