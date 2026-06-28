@@ -198,15 +198,13 @@ footer {
     padding: 10px 0;
 }
 
+/* ─── TABLET (≤ 768px) ─── */
 @media (max-width: 768px) {
     body {
         padding-top: 90px;
     }
 
-    .carousel-item img {
-        height: 300px;
-    }
-
+    /* Navbar */
     .navbar-brand img {
         width: 45px;
         height: 45px;
@@ -216,6 +214,7 @@ footer {
         font-size: 18px;
     }
 
+    /* Títulos de seção */
     .sobre-mim h1,
     .fundoo-carrossel h1,
     .feedbacks h1,
@@ -223,13 +222,51 @@ footer {
         font-size: 32px;
         margin-bottom: 25px;
     }
+
+    /* Seção "Sobre Mim" — parágrafo grande demais */
+    .sobre-mim p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    /* Carrossel — imagem e textos */
+    .carousel-item img {
+        height: 280px;
+    }
+
+    .carousel-item h5 {
+        font-size: 20px;
+    }
+
+    .carousel-item p {
+        font-size: 16px;
+    }
+
+    /* Botão principal */
+    .botaozin {
+        font-size: 18px;
+        padding: 8px 18px;
+    }
+
+    /* Feedbacks — padding lateral menor em tablet */
+    .feedbacks {
+        padding: 40px 10px;
+    }
+
+    /* Endereço — evitar que cole nas bordas */
+    .fundoo-endereco {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
+/* ─── MOBILE (≤ 576px) ─── */
 @media (max-width: 576px) {
     body {
         padding-top: 90px;
     }
 
+    /* Títulos de seção */
     .sobre-mim h1,
     .fundoo-carrossel h1,
     .feedbacks h1,
@@ -237,7 +274,51 @@ footer {
         font-size: 26px;
         margin-bottom: 20px;
     }
+
+    /* Seção "Sobre Mim" — parágrafo */
+    .sobre-mim p {
+        font-size: 16px;
+    }
+
+    /* Carrossel — reduz ainda mais a imagem */
+    .carousel-item img {
+        height: 200px;
+    }
+
+    .carousel-item h5 {
+        font-size: 18px;
+    }
+
+    .carousel-item p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Botão principal */
+    .botaozin {
+        font-size: 16px;
+        padding: 8px 14px;
+    }
+
+    /* Feedbacks — sem padding excessivo em mobile */
+    .feedbacks {
+        padding: 30px 5px;
+    }
+
+    /* Endereço */
+    .fundoo-endereco {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    /* Reduzir altura do mapa no mobile */
+    .fundoo-endereco iframe {
+        height: 300px;
+    }
 }
+
 
 
 .modal-verde .modal-content {
