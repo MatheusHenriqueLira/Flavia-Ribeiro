@@ -16,6 +16,11 @@ body h1{
     --bege: #EFE8CE;
 }
 
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 .minha-navbar {
     background: linear-gradient(to right, var(--bege), #E4E0D1);
     color: var(--verde);
@@ -71,20 +76,6 @@ body h1{
     object-fit: cover;
 }
 
-.meu-carrosel .carousel-item {
-    transform: scale(0.94);
-    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out !important;
-}
-
-.meu-carrosel .carousel-item.active {
-    transform: scale(1) !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-}
-
-.meu-carrosel .carousel-item-next,
-.meu-carrosel .carousel-item-prev {
-    transform: scale(0.94) !important;
-}
 
 .fundoo-carrossel {
     background: linear-gradient(to right, var(--bege), #E4E0D1);
@@ -94,9 +85,7 @@ body h1{
 
 .carousel-item h5 {
     font-size: 25px;
-    /* Ajuste esse número até ficar do tamanho que você gostar */
     font-weight: 700;
-    /* Deixa o título mais gordinho (negrito) */
     margin-bottom: 10px;
     /* Cria um espacinho extra entre o título e o parágrafo */
 }
@@ -207,128 +196,8 @@ footer {
     padding: 10px 0;
 }
 
-/* ─── TABLET (≤ 768px) ─── */
-@media (max-width: 768px) {
-    body {
-        padding-top: 90px;
-    }
 
-    /* Navbar */
-    .navbar-brand img {
-        width: 45px;
-        height: 45px;
-    }
-
-    .minha-navbar .navbar-brand {
-        font-size: 18px;
-    }
-
-    /* Títulos de seção */
-    .sobre-mim h1,
-    .fundoo-carrossel h1,
-    .feedbacks h1,
-    .fundoo-endereco h1 {
-        font-size: 32px;
-        margin-bottom: 25px;
-    }
-
-    /* Seção "Sobre Mim" — parágrafo grande demais */
-    .sobre-mim p {
-        font-size: 18px;
-        line-height: 1.6;
-    }
-
-    /* Carrossel — imagem e textos */
-    .carousel-item img {
-        height: 280px;
-    }
-
-    .carousel-item h5 {
-        font-size: 20px;
-    }
-
-    .carousel-item p {
-        font-size: 16px;
-    }
-
-    /* Botão principal */
-    .botaozin {
-        font-size: 18px;
-        padding: 8px 18px;
-    }
-
-    /* Feedbacks — padding lateral menor em tablet */
-    .feedbacks {
-        padding: 40px 10px;
-    }
-
-    /* Endereço — evitar que cole nas bordas */
-    .fundoo-endereco {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-}
-
-/* ─── MOBILE (≤ 576px) ─── */
-@media (max-width: 576px) {
-    body {
-        padding-top: 90px;
-    }
-
-    /* Títulos de seção */
-    .sobre-mim h1,
-    .fundoo-carrossel h1,
-    .feedbacks h1,
-    .fundoo-endereco h1 {
-        font-size: 26px;
-        margin-bottom: 20px;
-    }
-
-    /* Seção "Sobre Mim" — parágrafo */
-    .sobre-mim p {
-        font-size: 16px;
-    }
-
-    /* Carrossel — reduz ainda mais a imagem */
-    .carousel-item img {
-        height: 200px;
-    }
-
-    .carousel-item h5 {
-        font-size: 18px;
-    }
-
-    .carousel-item p {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    /* Botão principal */
-    .botaozin {
-        font-size: 16px;
-        padding: 8px 14px;
-    }
-
-    /* Feedbacks — sem padding excessivo em mobile */
-    .feedbacks {
-        padding: 30px 5px;
-    }
-
-    /* Endereço */
-    .fundoo-endereco {
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-
-    /* Reduzir altura do mapa no mobile */
-    .fundoo-endereco iframe {
-        height: 300px;
-    }
-}
-
-
+/*modais*/
 
 .modal-verde .modal-content {
     background-color: var(--branco) !important;
@@ -395,4 +264,291 @@ footer {
 .btn-verde:hover {
     background-color: var(--verde);
     transform: scale(1.02);
+}
+
+
+@media (max-width: 991px) {
+
+    /* ── Body ── */
+    body {
+        padding-top: 90px;
+    }
+
+    /* ── Navbar ── */
+    .minha-navbar .navbar-brand {
+        font-size: 20px;
+    }
+
+    .navbar-brand img {
+        width: 50px;
+        height: 50px;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 18px;
+        margin-right: 0;
+    }
+
+    /* ── Títulos de seção ── */
+    body h1 {
+        font-size: 36px;
+        margin-bottom: 28px;
+    }
+
+    /* ── Sobre mim ── */
+    .sobre-mim {
+        margin-bottom: 36px;
+    }
+
+    .sobre-mim p {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    .imagem-sobre-mim {
+        text-align: center;
+        margin-top: 28px;
+    }
+
+    .imagem-sobre-mim img {
+        max-width: 280px;
+        width: 100%;
+    }
+
+    .sobre-mim h4.instagram,
+    .sobre-mim h4.telefone {
+        font-size: 18px;
+    }
+
+    /* ── Carrossel ── */
+    .fundoo-carrossel {
+        padding: 36px 0;
+    }
+
+    .fundoo-carrossel h1 {
+        font-size: 36px;
+    }
+
+    .meu-carrosel {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
+
+    .carousel-item h5 {
+        font-size: 20px;
+    }
+
+    .carousel-item p {
+        font-size: 16px;
+    }
+
+    #carrosselProcedimentos {
+        max-width: 100%;
+    }
+
+    .btn-seta {
+        font-size: 1.8rem;
+    }
+
+    .botaozin {
+        font-size: 18px;
+        padding: 9px 18px;
+    }
+
+    /* ── Feedbacks ── */
+    .feedbacks h1 {
+        font-size: 36px;
+    }
+
+    .card-feedback .card-text {
+        font-size: 16px;
+    }
+
+    .card-feedback .card-title {
+        font-size: 17px;
+    }
+
+    /* ── Endereço ── */
+    .fundoo-endereco h1 {
+        font-size: 36px;
+    }
+
+    .fundoo-endereco {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+}
+
+
+@media (max-width: 575px) {
+
+    body {
+        padding-top: 80px;
+    }
+
+    /* ── Navbar ── */
+    .minha-navbar .navbar-brand {
+        font-size: 16px;
+    }
+
+    .navbar-brand img {
+        width: 36px;
+        height: 36px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 16px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* ── Títulos ── */
+    body h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    /* ── Sobre mim ── */
+    .sobre-mim {
+        margin-bottom: 24px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .sobre-mim p {
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .imagem-sobre-mim {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .imagem-sobre-mim img {
+        max-width: 220px;
+        width: 100%;
+    }
+
+    .sobre-mim .d-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px !important;
+    }
+
+    .sobre-mim h4.instagram,
+    .sobre-mim h4.telefone {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /* ── Carrossel ── */
+    .fundoo-carrossel {
+        padding: 28px 0;
+    }
+
+    .meu-carrosel {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .carousel-item img {
+        height: 200px;
+    }
+
+    .carousel-item h5 {
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+
+    .carousel-item p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .carousel-item.bg-light.p-4 {
+        padding: 12px !important;
+    }
+
+    #carrosselProcedimentos {
+        max-width: 100%;
+    }
+
+    .btn-seta {
+        font-size: 1.4rem;
+    }
+
+    .fundoo-carrossel .col-1 {
+        padding: 0 2px;
+    }
+
+    .botaozin {
+        font-size: 16px;
+        padding: 8px 16px;
+        width: 80%;
+    }
+
+    /* ── Feedbacks ── */
+    .feedbacks {
+        padding: 28px 4px;
+        margin-bottom: 40px;
+    }
+
+    .card-feedback .card-body {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .card-feedback .card-text {
+        font-size: 15px;
+    }
+
+    .card-feedback .card-title {
+        font-size: 16px;
+    }
+
+    .star-rating {
+        font-size: 22px !important;
+    }
+
+    /* ── Endereço ── */
+    .fundoo-endereco {
+        padding-top: 36px;
+        padding-bottom: 36px;
+        padding-left: 8px;
+        padding-right: 8px;
+    } 
+
+    .fundoo-endereco iframe {
+        height: 280px;
+    }
+
+    /* ── Modais ── */
+    .modal-verde .modal-body {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
+    .modal-verde .modal-content {
+        border-radius: 16px;
+    }
+
+    .modal-verde .btn-verde {
+        width: 100%;
+    }
+
+    /* ── Footer ── */
+    footer p {
+        font-size: 12px;
+        padding: 0 12px;
+    }
 }
