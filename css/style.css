@@ -60,8 +60,13 @@ html, body {
     margin-bottom: 50px;
 }
 
+.instagram a, .telefone a {
+    color: var(--verde);
+    text-decoration: underline;
+}
+
 .sobre-mim p {
-    font-size: 24px;
+    font-size: 23px;
     line-height: 1.8;
 }
 
@@ -132,12 +137,12 @@ html, body {
 }
 
 .card-feedback {
-    background-color: var(--branco); !important;
-    border: 1px solid var(--verde); !important;
+    background-color: var(--branco) !important;
+    border: 1px solid var(--verde) !important;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(150, 114, 80, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* faz o header/footer respeitarem o border-radius */
+    overflow: hidden; 
 }
 
 .card-feedback:hover {
@@ -378,6 +383,10 @@ footer {
         font-size: 36px;
     }
 
+    .card-feedback {
+        margin: 0 8px;
+    }
+
     .card-feedback .card-text {
         font-size: 16px;
     }
@@ -425,20 +434,20 @@ footer {
 
     /* ── Títulos ── */
     body h1 {
-        font-size: 24px;
+        font-size: 28px;
         margin-bottom: 20px;
     }
 
     /* ── Sobre mim ── */
     .sobre-mim {
         margin-bottom: 24px;
-        padding-left: 8px;
-        padding-right: 8px;
     }
 
     .sobre-mim p {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.65;
+        margin: 0 8px;
+        text-align: left;
     }
 
     .imagem-sobre-mim {
@@ -449,12 +458,6 @@ footer {
     .imagem-sobre-mim img {
         max-width: 220px;
         width: 100%;
-    }
-
-    .sobre-mim .d-flex {
-        flex-direction: column;
-        align-items: center;
-        gap: 6px !important;
     }
 
     .sobre-mim h4.instagram,
@@ -513,6 +516,10 @@ footer {
     .feedbacks {
         padding: 28px 4px;
         margin-bottom: 40px;
+    }
+
+    .card-feedback {
+        margin: 0 8px;
     }
 
     .card-feedback .card-body {
