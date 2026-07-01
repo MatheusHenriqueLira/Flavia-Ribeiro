@@ -1,36 +1,91 @@
-body {
-    background-color:var(--branco);
-    font-family: "Inria Serif", serif;
-    padding-top: 150px;
-}
-
-body h1{
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 40px;
-}
-
 :root {
     --verde: #967250;
+    --verde-escuro: #6b4f35;
     --branco: #F9F5F0;
     --bege: #EFE8CE;
+    --bege-escuro: #E4E0D1;
+
+    /* Altura "reservada" para a navbar fixa — usada no padding do body
+       e no scroll-margin das seções, sempre em sincronia entre si */
+    --navbar-h: 150px;
+
+    /* Tipografia fluida: em vez de "pular" de um tamanho pro outro só nos
+       breakpoints, o texto cresce/diminui suavemente em qualquer largura
+       de tela entre o menor e o maior celular/monitor */
+    --fs-h1: clamp(1.65rem, 1.35rem + 2.1vw, 3rem);
+    --fs-nav-brand: clamp(1rem, 0.82rem + 1vw, 1.75rem);
+    --fs-nav-link: clamp(1rem, 0.92rem + 0.45vw, 1.4375rem);
+    --fs-body-p: clamp(0.95rem, 0.83rem + 0.65vw, 1.4375rem);
+    --fs-carousel-h5: clamp(1.0625rem, 0.9rem + 0.9vw, 1.5625rem);
+    --fs-carousel-p: clamp(0.85rem, 0.74rem + 0.6vw, 1.25rem);
+    --fs-btn: clamp(1rem, 0.9rem + 0.55vw, 1.375rem);
+
+    /* Alvo mínimo de toque recomendado (Apple HIG / Material Design) */
+    --touch-target: 44px;
 }
 
-html, body {
+/* ===== Base ===== */
+html,
+body {
     overflow-x: hidden;
     max-width: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--branco);
+    font-family: "Inria Serif", serif;
+    padding-top: var(--navbar-h);
+    -webkit-text-size-adjust: 100%;
+}
+
+a,
+button,
+.btn-seta {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body h1 {
+    font-size: var(--fs-h1);
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* Seções acessadas pelo menu (âncoras) não devem ficar escondidas
+   atrás da navbar fixa ao rolar a página até elas */
+#procedimentos,
+#feedbacks,
+#endereco {
+    scroll-margin-top: calc(var(--navbar-h) + 10px);
+}
+
+/* Foco visível para quem navega pelo teclado (acessibilidade) */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible,
+.form-control:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* ===== Navbar ===== */
 .minha-navbar {
-    background: linear-gradient(to right, var(--bege), #E4E0D1);
+    background: linear-gradient(to right, var(--bege), var(--bege-escuro));
     color: var(--verde);
     text-align: center;
 }
 
 .minha-navbar .navbar-brand {
     color: var(--verde);
-    font-size: 28px;
+    font-size: var(--fs-nav-brand);
     font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-brand img {
@@ -38,12 +93,33 @@ html, body {
     height: 80px;
     margin-left: 10px;
     margin-right: 10px;
+    transition: width 0.2s ease, height 0.2s ease;
 }
 
 .navbar-nav .nav-link {
     color: var(--verde);
-    font-size: 23px;
+    font-size: var(--fs-nav-link);
     margin-right: 10px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: var(--verde-escuro);
+}
+
+.navbar-toggler {
+    border-color: var(--verde);
+    padding: 8px 10px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(150, 114, 80, 0.35);
+}
+
+/* ===== Sobre mim ===== */
+.sobre-mim {
+    color: var(--verde);
+    margin-bottom: 50px;
 }
 
 .sobre-mim img {
@@ -55,19 +131,24 @@ html, body {
     transform: scale(1.02);
 }
 
-.sobre-mim {
-    color: var(--verde);
-    margin-bottom: 50px;
+.sobre-mim p {
+    font-size: var(--fs-body-p);
+    line-height: 1.8;
 }
 
-.instagram a, .telefone a {
+.instagram a,
+.telefone a {
     color: var(--verde);
     text-decoration: underline;
+    display: inline-block;
+    padding: 4px 0;
 }
 
-.sobre-mim p {
-    font-size: 23px;
-    line-height: 1.8;
+/* ===== Carrossel de procedimentos ===== */
+.fundoo-carrossel {
+    background: linear-gradient(to right, var(--bege), var(--bege-escuro));
+    color: var(--verde);
+    padding: 50px 0;
 }
 
 .meu-carrosel {
@@ -75,52 +156,39 @@ html, body {
     margin-bottom: 50px;
 }
 
+#carrosselProcedimentos {
+    max-width: 800px;
+    /* Impede o carrossel de ficar gigante em telas grandes */
+    margin: 0 auto;
+}
+
+.carousel-item {
+    min-height: 800px;
+    display: flex !important;
+    flex-direction: column;
+}
+
 .carousel-item img {
     width: 100%;
-    height: 450px;
+    aspect-ratio: 16 / 9;
+    height: auto;
     object-fit: cover;
+    display: block;
 }
 
 .carousel-item .mt-3 {
     flex-grow: 1;
 }
 
-.carousel-item {
-    min-height: 780px; /* ajuste conforme necessário */
-    display: flex !important;
-    flex-direction: column;
-}
-
-.fundoo-carrossel {
-    background: linear-gradient(to right, var(--bege), #E4E0D1);
-    color: var(--verde);
-    padding: 50px 0;
-}
-
 .carousel-item h5 {
-    font-size: 25px;
+    font-size: var(--fs-carousel-h5);
     font-weight: 700;
     margin-bottom: 10px;
-    /* Cria um espacinho extra entre o título e o parágrafo */
 }
 
 .carousel-item p {
-    font-size: 20px;
+    font-size: var(--fs-carousel-p);
     line-height: 1.6;
-}
-
-#carrosselProcedimentos {
-    max-width: 800px;
-    /* Impede o carrossel de ficar gigante em telas grandes */
-    margin: 0 auto;
-    /* Centraliza o carrossel perfeitamente no meio da página */
-}
-
-#carrosselProcedimento .carousel-item img {
-    max-height: 400px;
-    /* Controla a altura máxima da foto para não sumir com o site */
-    object-fit: cover;
-    /* Faz a foto se ajustar ao espaço sem ficar distorcida ou esticada */
 }
 
 .btn-seta {
@@ -130,15 +198,21 @@ html, body {
     font-size: 2.2rem;
     cursor: pointer;
     transition: color 0.2s, transform 0.2s;
-    padding: 0;
+    padding: 10px;
     line-height: 1;
+    min-width: var(--touch-target);
+    min-height: var(--touch-target);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-seta:hover {
-    color: #6b4f35;
+    color: var(--verde-escuro);
     transform: scale(1.15);
 }
 
+/* ===== Feedbacks ===== */
 .feedbacks {
     color: var(--verde);
     margin-bottom: 80px;
@@ -151,7 +225,7 @@ html, body {
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(150, 114, 80, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .card-feedback:hover {
@@ -166,14 +240,9 @@ html, body {
 }
 
 .star-rating {
-    font-size: 28px !important;       
-    color: #c5a880;        
-    letter-spacing: 2px;   
-}
-
-.card-feedback:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(150, 114, 80, 0.12);
+    font-size: 28px;
+    color: #d4a373;
+    letter-spacing: 2px;
 }
 
 .card-feedback .card-text {
@@ -189,137 +258,73 @@ html, body {
     color: var(--verde);
 }
 
-.star-rating {
-    color: #d4a373;
-    font-size: 20px;
-}
-
 .botaozin {
     background-color: var(--verde);
     color: var(--branco);
-    padding: 10px 20px;
-    font-size: 22px;
+    padding: 12px 26px;
+    font-size: var(--fs-btn);
     border-radius: 20px;
-    transition: transform 0.3s ease;
+    display: inline-block;
+    min-height: var(--touch-target);
+    transition: transform 0.3s ease, background-color 0.2s ease;
 }
 
 .botaozin:hover {
     color: var(--branco);
-    background-color: var(--verde);
+    background-color: var(--verde-escuro);
     transform: scale(1.02);
 }
 
+/* ===== Endereço ===== */
 .fundoo-endereco {
-    background: linear-gradient(to right, var(--bege), #E4E0D1);
+    background: linear-gradient(to right, var(--bege), var(--bege-escuro));
     color: var(--verde);
     padding-top: 60px;
     padding-bottom: 60px;
 }
 
+.fundoo-endereco iframe {
+    border-radius: 16px;
+}
+
+/* ===== Footer ===== */
 footer {
-    background: linear-gradient(to right, var(--bege), #E4E0D1);
+    background: linear-gradient(to right, var(--bege), var(--bege-escuro));
     color: var(--verde);
-    padding: 10px 0;
+    padding: 14px 0;
 }
 
 
-/*modais*/
+/* ---------- Tablets / notebooks pequenos (≤ 991.98px) ---------- */
+@media (max-width: 991.98px) {
 
-.modal-verde .modal-content {
-    background-color: var(--branco) !important;
-    border: 4px solid var(--verde) !important;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(43, 92, 63, 0.15);
-}
-
-.modal-verde .modal-header,
-.modal-verde .modal-footer {
-    border: none;
-}
-
-.modal-verde .modal-body {
-    padding-left: 45px !important;
-    padding-right: 45px !important;
-}
-
-.modal-verde .modal-title,
-.modal-verde .form-label,
-.modal-verde h5,
-.modal-verde h6,
-.modal-verde p,
-.modal-verde .link-verde {
-    color: var(--verde) !important;
-}
-
-.modal-verde .form-control {
-    border: 2px solid var(--verde);
-    border-radius: 15px;
-    color: var(--verde);
-}
-
-.modal-verde .form-control::placeholder {
-    color: var(--verde);
-}
-
-.modal-verde .form-control:focus {
-    border-color: var(--verde);
-    box-shadow: 0 0 0 0.25rem rgba(43, 92, 63, 0.25);
-    color: var(--verde);
-}
-
-.modal-verde .link-verde {
-    font-weight: bold;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.modal-verde .link-verde:hover {
-    color: var(--verde) !important;
-}
-
-.modal-verde .btn-verde {
-    background-color: var(--verde);
-    color: var(--branco) !important;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 24px;
-    font-weight: bold;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.btn-verde:hover {
-    background-color: var(--verde);
-    transform: scale(1.02);
-}
-
-
-@media (max-width: 991px) {
-
-    /* ── Body ── */
-    body {
-        padding-top: 90px;
+    :root {
+        --navbar-h: 96px;
     }
 
     /* ── Navbar ── */
-    .minha-navbar .navbar-brand {
-        font-size: 20px;
-    }
-
     .navbar-brand img {
-        width: 50px;
-        height: 50px;
+        width: 54px;
+        height: 54px;
         margin-left: 6px;
         margin-right: 6px;
     }
 
+    .navbar-nav {
+        width: 100%;
+        margin-left: 0 !important;
+        text-align: center;
+        padding: 10px 0 4px;
+    }
+
     .navbar-nav .nav-link {
-        font-size: 18px;
         margin-right: 0;
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 
     /* ── Títulos ── */
     body h1 {
-        font-size: 36px;
         margin-bottom: 28px;
     }
 
@@ -328,33 +333,20 @@ footer {
         margin-bottom: 36px;
     }
 
-    .sobre-mim p {
-        font-size: 18px;
-        line-height: 1.7;
-    }
-
     .imagem-sobre-mim {
         text-align: center;
         margin-top: 28px;
     }
 
     .imagem-sobre-mim img {
-        max-width: 280px;
+        max-width: 300px;
         width: 100%;
-    }
-
-    .sobre-mim h4.instagram,
-    .sobre-mim h4.telefone {
-        font-size: 18px;
+        box-shadow: 0 10px 30px rgba(150, 114, 80, 0.18);
     }
 
     /* ── Carrossel ── */
     .fundoo-carrossel {
-        padding: 36px 0;
-    }
-
-    .fundoo-carrossel h1 {
-        font-size: 36px;
+        padding: 40px 0;
     }
 
     .meu-carrosel {
@@ -362,16 +354,12 @@ footer {
         margin-bottom: 32px;
     }
 
+    .carousel-item {
+        min-height: 700px;
+    }
+
     .carousel-item img {
-        height: 300px;
-    }
-
-    .carousel-item h5 {
-        font-size: 20px;
-    }
-
-    .carousel-item p {
-        font-size: 16px;
+        aspect-ratio: 4 / 3;
     }
 
     #carrosselProcedimentos {
@@ -382,68 +370,106 @@ footer {
         font-size: 1.8rem;
     }
 
-    .botaozin {
-        font-size: 18px;
-        padding: 9px 18px;
-    }
-
     /* ── Feedbacks ── */
-    .feedbacks h1 {
-        font-size: 36px;
-    }
-
     .card-feedback {
         margin: 0 8px;
     }
 
-    .card-feedback .card-text {
-        font-size: 16px;
-    }
-
-    .card-feedback .card-title {
-        font-size: 17px;
-    }
-
     /* ── Endereço ── */
-    .fundoo-endereco h1 {
-        font-size: 36px;
-    }
-
     .fundoo-endereco {
         padding-top: 48px;
         padding-bottom: 48px;
     }
 
+    .fundoo-endereco iframe {
+        height: 380px;
+    }
 }
 
+/* ---------- Celulareszão (≤ 767.98px) ---------- */
+@media (max-width: 767.98px) {
 
-@media (max-width: 575px) {
+    :root {
+        --navbar-h: 88px;
+    }
 
-    body {
-        padding-top: 80px;
+    /* ── Sobre mim: foto aparece primeiro (mais acolhedor no celular) ── */
+
+    .sobre-mim h1{
+        margin-top: 20px;
+    }
+    
+    .imagem-sobre-mim img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        object-position: center 20%;
+        border-radius: 100%;
+    }
+
+    .sobre-mim img {
+        border-radius: 100%;
+    }
+
+    /* Instagram/telefone: em telas estreitas, empilha em vez de espremer
+       tudo numa linha só (isso evitava rolagem horizontal escondida) */
+    .sobre-mim .flex-nowrap {
+        flex-wrap: wrap !important;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 12px !important;
+    }
+
+    /* ── Carrossel ── */
+    .carousel-item .mt-3 {
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .carousel-item .mt-3 h5 {
+        flex-shrink: 0;
+    }
+
+    .carousel-item .mt-3 p {
+        overflow-y: auto;
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    /* ── Feedbacks: reduz o espaço vertical enorme entre os cards ── */
+    .feedbacks .row.g-5 {
+        --bs-gutter-y: 1.75rem;
+    }
+}
+
+/* ---------- Celular (≤ 575.98px) ---------- */
+@media (max-width: 575.98px) {
+
+    :root {
+        --navbar-h: 78px;
     }
 
     /* ── Navbar ── */
-    .minha-navbar .navbar-brand {
-        font-size: 16px;
-    }
-
     .navbar-brand img {
-        width: 36px;
-        height: 36px;
+        width: 38px;
+        height: 38px;
         margin-left: 4px;
         margin-right: 4px;
     }
 
     .navbar-nav .nav-link {
-        font-size: 16px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(150, 114, 80, 0.15);
+    }
+
+    .navbar-nav .nav-item:last-child .nav-link {
+        border-bottom: none;
     }
 
     /* ── Títulos ── */
     body h1 {
-        font-size: 28px;
         margin-bottom: 20px;
     }
 
@@ -453,31 +479,21 @@ footer {
     }
 
     .sobre-mim p {
-        font-size: 14px;
-        line-height: 1.65;
-        margin: 0 8px;
         text-align: left;
     }
 
-    .imagem-sobre-mim {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .imagem-sobre-mim img {
-        max-width: 220px;
-        width: 100%;
+    .sobre-mim img {
+        border-radius: 100%;
     }
 
     .sobre-mim h4.instagram,
     .sobre-mim h4.telefone {
-        font-size: 16px;
         text-align: center;
     }
 
     /* ── Carrossel ── */
     .fundoo-carrossel {
-        padding: 28px 0;
+        padding: 30px 0;
     }
 
     .meu-carrosel {
@@ -485,55 +501,40 @@ footer {
         margin-bottom: 20px;
     }
 
-    .carousel-item img {
-        height: 200px;
-    }
-
-    .carousel-item h5 {
-        font-size: 17px;
-        margin-bottom: 8px;
-    }
-
-    .carousel-item p {
-        font-size: 13px;
-        line-height: 1.5;
+    .carousel-item {
+        min-height: 540px;
     }
 
     .carousel-item.bg-light.p-4 {
-        padding: 12px !important;
-    }
-
-    #carrosselProcedimentos {
-        max-width: 100%;
+        padding: 16px !important;
     }
 
     .btn-seta {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 
     .fundoo-carrossel .col-1 {
         padding: 0 2px;
     }
 
-    .botaozin {
-        font-size: 16px;
-        padding: 8px 16px;
-        width: 80%;
-    }
 
     /* ── Feedbacks ── */
     .feedbacks {
         padding: 28px 4px;
-        margin-bottom: 40px;
+        margin-bottom: 44px;
+    }
+
+    .feedbacks .row.g-5 {
+        --bs-gutter-y: 1.25rem;
     }
 
     .card-feedback {
-        margin: 0 8px;
+        margin: 0 6px;
     }
 
     .card-feedback .card-body {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
+        padding-left: 22px !important;
+        padding-right: 22px !important;
     }
 
     .card-feedback .card-text {
@@ -545,65 +546,116 @@ footer {
     }
 
     .star-rating {
-        font-size: 22px !important;
+        font-size: 22px;
     }
 
     /* ── Endereço ── */
     .fundoo-endereco {
-        padding-top: 36px;
-        padding-bottom: 36px;
+        padding-top: 32px;
+        padding-bottom: 32px;
         padding-left: 8px;
         padding-right: 8px;
-    } 
+    }
 
     .fundoo-endereco iframe {
-        height: 280px;
-    }
-
-    /* ── Modais ── */
-    .modal-verde .modal-body {
-        padding-left: 18px !important;
-        padding-right: 18px !important;
-    }
-
-    .modal-verde .modal-content {
-        border-radius: 16px;
-    }
-
-    .modal-verde .btn-verde {
-        width: 100%;
+        height: 260px;
     }
 
     /* ── Footer ── */
     footer p {
-        font-size: 12px;
-        padding: 0 12px;
+        font-size: 13px;
+        padding: 0 16px;
     }
 }
 
-/* Desktop */
-.carousel-item {
-    min-height: 820px;
-}
+/* ---------- Celularzinho (≤ 420px) ---------- */
+@media (max-width: 420px) {
 
-/* Tablet */
-@media (max-width: 991px) {
+    :root {
+        --navbar-h: 72px;
+    }
+
+    .navbar-brand img {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    .sobre-mim img {
+        border-radius: 100%;
+    }
+
     .carousel-item {
-        min-height: 720px;
+        min-height: 500px;
     }
 
-    .carousel-item img {
-        height: 300px;
+    .fundoo-endereco iframe {
+        height: 230px;
     }
 }
 
-/* Celular */
-@media (max-width: 575px) {
-    .carousel-item {
-        min-height: 300px;
+/* ---------- Celularzinho inho (≤ 359px) ---------- */
+@media (max-width: 359px) {
+
+    :root {
+        --navbar-h: 68px;
     }
 
-    .carousel-item img {
-        height: 200px;
+    .minha-navbar .navbar-brand {
+        gap: 4px;
+    }
+
+    .navbar-brand img {
+        width: 30px;
+        height: 30px;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .sobre-mim img {
+        border-radius: 100%;
+    }
+
+    .carousel-item {
+        min-height: 480px;
+    }
+
+    .btn-seta {
+        font-size: 1.3rem;
+        padding: 8px;
+    }
+
+    .star-rating {
+        letter-spacing: 1px;
+    }
+}
+
+/* ---------- se for tela touch ---------- */
+@media (hover: none) and (pointer: coarse) {
+
+    .sobre-mim img:hover,
+    .card-feedback:hover,
+    .botaozin:hover,
+    .btn-seta:hover {
+        transform: none;
+    }
+
+    .sobre-mim img:active {
+        transform: scale(0.98);
+    }
+
+    .card-feedback:active {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(150, 114, 80, 0.18);
+    }
+
+    .botaozin:active {
+        transform: scale(0.97);
+        background-color: var(--verde-escuro);
+    }
+
+    .btn-seta:active {
+        color: var(--verde-escuro);
+        transform: scale(0.92);
     }
 }
