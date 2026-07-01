@@ -81,6 +81,15 @@ html, body {
     object-fit: cover;
 }
 
+.carousel-item .mt-3 {
+    flex-grow: 1;
+}
+
+.carousel-item {
+    min-height: 780px; /* ajuste conforme necessário */
+    display: flex !important;
+    flex-direction: column;
+}
 
 .fundoo-carrossel {
     background: linear-gradient(to right, var(--bege), #E4E0D1);
@@ -569,5 +578,32 @@ footer {
     footer p {
         font-size: 12px;
         padding: 0 12px;
+    }
+}
+
+/* Desktop */
+.carousel-item {
+    min-height: 820px;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .carousel-item {
+        min-height: 720px;
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
+}
+
+/* Celular */
+@media (max-width: 575px) {
+    .carousel-item {
+        min-height: 300px;
+    }
+
+    .carousel-item img {
+        height: 200px;
     }
 }
